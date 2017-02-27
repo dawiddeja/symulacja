@@ -19,6 +19,7 @@ def register_window():
  
  
 def my_on_click(e):
+
     x = e.x
     y = e.y
  
