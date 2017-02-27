@@ -1,5 +1,10 @@
 # symulacja
 
+from Tkinter import *
+import numpy
+import math
+import random
+
 tablica = numpy.matrix(100,100)
  
  
@@ -39,7 +44,47 @@ def refresh():
  
 def start():
     for punkt in tablica:
-        #tutaj liczymy wartosc dla kazdego punktu
+        if 0 < y < 90 && 0 < x < 90
+            algorytm(tablica[x - 10, y], tablica[x + 10, y], tablica[x, y - 10], tablica[x, y + 10])
+            
+        elif x == 0 && y == 0
+            algorytm(tablica[x, y + 10], tablica[x + 10, y], 0, 0)
+
+        elif x == 90 && y == 0
+            algorytm(tablica[x, y + 10], tablica[x - 10, y], 0, 0)
+
+        elif x == 0 && y == 90
+            algorytm(tablica[x, y - 10], tablica[x + 10, y], 0, 0)
+
+        elif x == 90 && y == 90
+            algorytm(tablica[x, y - 10], tablica[x - 10, y], 0, 0)
+
+        elif y == 0
+            algorytm(tablica[x, y + 10], tablica[x + 10, y], tablica[x - 10, y], 0)
+
+        elif y == 90
+            algorytm(tablica[x, y - 10], tablica[x + 10, y], tablica[x - 10, y], 0)
+
+        elif x == 0
+            algorytm(tablica[x, y + 10], tablica[x + 10, y], tablica[x, y - 10], 0)
+
+        elif x == 90
+            algorytm(tablica[x, y + 10], tablica[x, y - 10], tablica[x - 10, y], 0)
+
+
+def algorytm (one, two, three, four)
+    h = one + two + three + four
+    b = 0.5
+    p = math.exp(b*h)
+    r = random.uniform(0, 1)
+
+    if r > p
+        tablica[x,y] = 1
+    else
+        tablica[x,y] = -1
+
+    refresh()
+        
  
  
 if __name__ == '__main__':
